@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="Gamestyle.css">
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+</head>
+    <style>
+             *{
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+        }
+        body{
+      background-color: rgb(43, 43, 43);
+     /*  background-color: rgb(255, 255, 255); */
+      overflow: auto;
+    }
+    .main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 20px 20px 0px 20px;
+       background-color: rgb(43, 43, 43);
+       
+    
+    }
+    .content{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 150px;
+        padding: 30px;
+        padding-top: 0px;
+
+    }
+   
+    .new{
+        width: 100%;
+        height: 80vh;
+        background: rgb(58, 58, 58);
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+   /*      background: url("/img/sea10.jpg");  */
+        padding-top: 50px;
+        padding-bottom: 20px;
+        background-size: cover;
+       overflow: hidden;
+    
+     
+    }
+  
+    .new-item{
+        width: 80%;
+        height: 100%;
+        background: rgb(80, 80, 80);
+        margin: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        
+
+    }
+    .new-item:hover{
+        height: 150%;
+    }
+    .new-item::after{
+        content: "";
+        width: 30%;
+        height: 30vh;
+        background-color: rgba(255, 255, 255, 0.1);
+        position: absolute;
+        right: -9vw;
+        transform: skewX(-45deg);
+        backdrop-filter: blur(10px);
+
+    }
+    .new-item:hover img{
+        opacity: 100%;
+    }
+    .new-item:hover:after{
+        backdrop-filter: blur(0px);
+    }
+    .new-item-box{
+        width: 70%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0% 0% 5% 5%;
+        position: absolute;
+        font-size: 1.5rem;
+        color: white;
+
+    }
+   
+    .new-item-name{
+        width: auto;
+        height: 10vh;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+    }
+    .new-item-price{
+        width: 8vw;
+        height: 4.5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ff9c4bee;
+        letter-spacing: 2px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        
+
+        
+    }
+    .new-item-system{
+        width: 8vw;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: 2px;
+        background-color: #ff7f3557;
+        margin-top: 10px;
+
+        
+    }
+    .new-item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 70%;
+
+        
+    }
+    .new-item-price i {
+        margin-left: 5px;
+        margin-top: 2px;
+        font-size: 1.2rem;
+    }
+    .new-item-system i {
+        margin-left: 10px;
+        margin-top: 2px;
+        font-size: .9rem;
+    }
+    .game{
+        width: 100%;
+        height: auto;
+        background: rgb(58, 58, 58);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        padding-top: 50px;
+        padding-bottom: 60px;
+        /* background: url('https://static.vecteezy.com/system/resources/previews/000/693/323/non_2x/abstract-gradient-pink-purple-stripes-on-purple-background-vector.jpg'); */
+        overflow: hidden;
+    /*   background: linear-gradient(135deg,
+      rgb(146, 11, 146)20%,rgb(9, 52, 133) ); */
+        background-size: cover;
+  
+    }
+    
+
+
+    .game-table{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        margin: 30px 30px 30px 30px;
+        flex-wrap: wrap;
+    }
+    
+    .game-item{
+        width: 15vw;
+        height: 40vh;
+        margin: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        cursor: pointer;
+        overflow: visible;
+        margin-bottom: 70px;
+        perspective: 1000;
+            
+    }
+    .game-item img{
+        width: 100%;
+        height: 100%;
+        object-position:top left;
+      
+    }
+    .game-box{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+        color: white;
+        background-color: rgba(48, 48, 48, 0.658);
+        padding-top: 10px;
+
+    }
+    .game-name{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-transform: capitalize;
+        font-size: 0.8rem;   
+
+    }
+    .game-price {
+        font-size: 0.7rem;   
+        padding: 5px;
+
+    }
+    .game-price i{
+        font-size: 0.6.5rem;   
+    }
+    .line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        z-index: 2;
+        
+    }
+    .game-item:hover{
+        transform: translate(10px,-10px);
+    }
+
+     
+    footer{
+        width: 100%;
+        height: 20vh;
+        background: rgba(109, 109, 109, 0);
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        position: absolute;
+    
+
+
+    }
+    
+.footer-social{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.3rem;
+  border-right: 1px solid white;
+
+
+}
+.footer-social-icon{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+}
+.footer-about{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem;
+
+
+
+}
+.footer-about-detail{
+  width: 100%;
+  height:100%;
+  font-size: 0.8rem;
+
+}
+
+.display {
+    width: 0vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(83, 83, 83, 0.486);
+    background: linear-gradient(45deg,rgba(154, 8, 238, 0.5),rgba(30, 104, 243, 0.5) );
+
+    z-index: 11;
+    backdrop-filter: blur(30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.display-box{
+    width: auto;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.281) ;
+
+}
+
+.display-game{
+    width: 500px;
+    height: 100%;
+    background: rgb(158, 158, 158);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+ 
+}
+.display-reciept{
+    width: 400px;
+    height: 100%;
+    background: linear-gradient(45deg,rgba(16, 187, 173, 0.527),rgba(30, 104, 243, 0.486) );
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+
+    
+}
+
+
+
+
+.display-reciept-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 30px;
+    color: white;
+    font-size: 0.8rem;
+
+}
+.display-reciept-head{
+   font-size: 1.8rem;
+   border-bottom: 1px solid white;
+
+}
+.display-reciept-body{
+    width: 100%;
+   height: 80%;
+   font-size: 1.6rem;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+.display-reciept-submit{
+    width: 90%;
+   height: 15%;
+   font-size: 1.2rem;
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    background: linear-gradient(45deg,rgba(245, 176, 15, 0.5),rgba(168, 243, 30, 0.5) );
+    color: rgb(255, 255, 255);
+    
+
+
+
+}
+.display-reciept-submit:hover{
+    cursor: pointer;
+    color: rgb(116, 116, 116);
+    background-color: rgb(110, 110, 110);
+
+}
+
+.reciept{
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.display-game img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.display-game-name{
+    width: 100%;
+    height: 10vh;
+    background: linear-gradient(45deg,rgba(154, 8, 238, 0.5),rgba(30, 104, 243, 0.5) );
+
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    z-index: 1;
+    color: white;
+}
+   
+iframe{
+    width: 90%;
+    height: 100%;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+.boxprevent{
+    width: 101%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(80, 80, 80);
+    z-index: 5;
+    transform: translateX(-100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.boxprevent-eff{
+    animation: preventer 2.5s 0s forwards;
+
+}
+
+iframe { 
+      pointer-events: none;
+
+    }
+
+@keyframes preventer {
+    0% {
+        transform: translateX(-100%);
+    }
+    50%{
+        transform: translateX(0%);
+
+    }
+    100%{
+        transform: translateX(-100%);
+
+    }
+    
+}
+ @keyframes show {
+    0% {
+        visibility: visible;
+    }
+    100%{
+        visibility: visible;
+
+    }
+ }
+.game div,iframe{
+        visibility: hidden;
+    }
+
+.new div{
+        visibility: hidden;
+    }    
+.game div,iframe{
+    animation: show 2s 1s forwards;
+    }
+.new div{
+    animation: show 2s 1s forwards;
+
+    }
+
+    .new-box{
+        width: 50%;
+        height: 100%;
+        overflow-y: scroll;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+
+    .submit-eff{
+        width: 0px;
+        height: 100px;
+        clip-path: circle(50%);
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+        background: linear-gradient(45deg,rgba(6, 138, 127, 0.95),rgba(22, 80, 187, 0.95) );
+        color: rgba(0, 117, 128, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 2rem;
+        text-transform: uppercase;
+        overflow: hidden;
+
+    }
+    .finish-eff{
+        width: 100%;
+        height: 100%;
+        clip-path: circle(90%);
+        z-index: 3;
+        border-radius: 50px;
+        transition: 1s;
+        transform: scale(1.1,1.1);
+    }
+    .text-eff{
+        color: rgb(255, 255, 255);
+    }
+    .display-eff{
+        width: 100vw;
+    }
+
+    .add-cart{
+        width: 60px;
+        height: 60px;
+        position: absolute;
+        background-color: rgba(218, 218, 218, 5);
+        border-bottom-left-radius: 40px;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5px;
+        color: rgb(255, 145, 0);
+        font-size: 1.3rem;
+        cursor: pointer;
+
+    }
+    .cart{
+        z-index: 5;
+        right: 8%;
+    }
+    .cart-panel{
+        width: 25vw;
+        height: 0vh;
+        background: rgba(39, 39, 39, 0.90);
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding: 0px;
+        padding-left: 10px;
+        backdrop-filter: blur(30px);
+        overflow: hidden;
+        z-index: 10;
+
+    }
+    .cart-item{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        color: white;
+        font-size: .8rem;
+    }
+    .cart-item:hover{
+        background: rgba(65, 65, 65, 0.883);
+
+    }
+    .cart-img{
+        width: 80px;
+        height: 100%;
+        object-fit: contain;
+        object-position: left;
+        margin-right:10px ;
+
+    }
+    .cart-text{
+        width: 150px;
+        height: 100%;
+        margin-left:10px ;
+        margin-right:10px ;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .cart-panel-eff{
+        height: 80vh;
+        overflow: hidden;
+        padding: 20px;
+
+    }
+    .cart-text-remove{
+        cursor: pointer;
+    }
+    .cart-item-eff{
+        height: 0;
+        overflow: hidden;
+    }
+  
+    </style>
+<body>
+    <header class="header">
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Stream <i class="fas fa-gamepad"></i></span></div>
+        <a href="GameIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="GameLibrary.html" class="header-item profile-btn">
+            <i class="fas fa-th-large"></i> Library
+            <div class="detail">Library</div>
+        </a>
+        <a href="GameShop.html" class="header-item">
+            <i class="fas fa-tag"></i> Shop
+            <div class="detail">Shop</div>
+        </a>
+        <a href="GameNews.html" class="header-item">
+            <i class="far fa-newspaper"></i> News
+            <div class="detail">News</div>
+        </a>
+
+        <a href="Login.html" class="login-item"> Login <i class="fas fa-sign-in-alt"></i></a>
+        <div  class="login-item cart"> <i  class="fas fa-shopping-cart"></i>
+           
+        </div>
+      </header>
+      <div class="display">
+          <div class="display-box">
+            <div class="add-cart"> <i class="fas fa-cart-plus"></i> </div>
+
+            <div class="display-game">
+                <img src="https://cdn.mos.cms.futurecdn.net/gNY3U5U2rmRgFcefSayuH3.jpg" alt="">
+                <div class="display-game-name">- Resident Eivil VILLAGE -</div>
+            </div>
+            <div class="display-reciept">
+                <div class="display-reciept-box">
+                    <div class="display-reciept-head">Check Out</div>
+                    <div class="display-reciept-body">
+                        <div class="reciept"><span>Price :</span> <span>200 ฿</span> </div>
+                        <div class="reciept"><span>Discount :</span> <span>0 ฿</span> </div>
+                        <div class="reciept"><span>Total :</span> <span>200 ฿</span> </div>
+
+                    </div>
+                    <div class="display-reciept-submit"> PURCHASE </div>
+                </div>
+            </div>
+            <div class="submit-eff">
+                <div class="submit-icon" style="margin-bottom: 10px;">  
+                    <i class="fas fa-circle-notch fa-spin"></i>
+                </div>
+                <div class="submit-text"> on process  </div>
+
+            </div>
+          </div>
+      </div>
+      <div class="cart-panel">  
+    </div>
+      
+      
+
+      <div class="main">
+          <div class="content">
+            <div class="new">
+             <span class="boxprevent"></span>
+                <iframe class="preview-game" 
+                 src="https://www.youtube-nocookie.com/embed/NLg4VmPcq3o?controls=0&autoplay=1&loop=1&mute=1&showinfo=0&start=1"
+                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+                 <div class="new-box">
+
+                <div class="new-pic"></div>
+                  <div class="line-right"></div>
+                  <div class="line-right" style="width: auto; background: none; padding-left: 10px; padding-top: 10px; font-size: 1.2rem;">New Game </div>
+    
+                  <div class="new-item" data-url="https://www.youtube-nocookie.com/embed/NLg4VmPcq3o?start=1">
+                    <img style="transform: rotateY(180deg);" src="https://www.destructoid.com/wp-content/uploads/2020/12/608338-Far-Cry-6-delay.jpg" alt="">
+                      <div class="new-item-box">
+                         <div class="new-item-name">Far cry 6</div>
+                          <div class="new-item-price">100 <i class="fas fa-dollar-sign"></i></div>
+                          <div class="new-item-system"> <i class="fab fa-windows"></i> <i class="fab fa-playstation"></i></div>
+                      </div>
+                  </div>
+    
+                  <div class="new-item" data-url="https://www.youtube-nocookie.com/embed/btFclZUXpzA?start=22" >
+                    <img style="transform: rotateY(0deg);" src="https://cdn.mos.cms.futurecdn.net/gNY3U5U2rmRgFcefSayuH3.jpg" alt="">
+                      <div class="new-item-box">
+                         <div class="new-item-name">Resident Evil Village</div>
+                          <div class="new-item-price">100 <i class="fas fa-dollar-sign"></i></div>
+                          <div class="new-item-system"> <i class="fab fa-windows"></i> <i class="fab fa-playstation"></i></div>
+                      </div>
+                  </div>
+    
+                  <div class="new-item" data-url="https://www.youtube-nocookie.com/embed/ASzOzrB-a9E?start=14">
+                    <img style="transform: rotateY(180deg);" src="https://news.in-24.com/content/uploads/2021/06/14/c921d6cc12.jpg" alt="">
+                      <div class="new-item-box">
+                         <div class="new-item-name">battlefield 2042 </div>
+                          <div class="new-item-price">100 <i class="fas fa-dollar-sign"></i></div>
+                          <div class="new-item-system"> <i class="fab fa-windows"></i> <i class="fab fa-playstation"></i></div>
+                      </div>
+                  </div>
+                </div>
+             </div>
+
+             <div class="game">
+             <span class="boxprevent"></span>
+                <div class="line-right"></div>
+                <div class="line-right" style="width: auto; background: none; padding-left: 10px; padding-top: 10px; font-size: 1.2rem;">Recommend Games </div>
+                        <div class="game-table">
+                            <div class="game-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/b2/Ori_and_the_Blind_Forest_Logo.jpg/220px-Ori_and_the_Blind_Forest_Logo.jpg" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> Ori and the blind Forrest  </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/th/thumb/d/d0/SIMS4.jpg/250px-SIMS4.jpg" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> The sims 4</div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://th-test-11.slatic.net/p/fa1453710d2245e0fa1f1743c4bf0097.jpg_720x720q80.jpg_.webp" alt="">
+                                    <div class="game-box">
+                                        <div class="game-name"> Stardew Valley </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+    
+                                    </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> minecraft </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://s3.gaming-cdn.com/images/products/932/orig/terraria-cover.jpg" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> Terraria </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://upload.wikimedia.org/wikipedia/th/c/cc/Grand_Theft_Auto_V_Cover.png" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> grand theft auto v</div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw7387f247/images/large/5ecd2c925cdf9a1528a8c1d1.jpg?sw=341&sh=450&sm=fit" alt="">
+                                    <div class="game-box">
+                                        <div class="game-name"> Farcry 7 </div>
+                                        <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                    </div>
+                                
+                            </div>
+                            <div class="game-item">
+                                <img src="https://images.g2a.com/newlayout/323x433/1x1x0/e229a5565b45/5fd211ba46177c7d675c6372" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> cyberpunk 2077  </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://www.satyrnet.it/wp-content/uploads/2021/03/Watch-Dogs-Legion-online.jpg" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> Watch dogs Legion </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                            <div class="game-item">
+                                <img src="https://www.digiseller.ru/preview/907830/p1_3090231_54be502c.jpg" alt="">
+                                <div class="game-box">
+                                    <div class="game-name"> Sea of thieves </div>
+                                    <div class="game-price">200 <i class="fas fa-dollar-sign"></i> </div>
+                                </div>
+                            </div>
+                        </div>
+                 </div>
+          </div>
+          
+          <footer class="footer">
+            <div class = "footer-social">
+                Follow Me
+                <div class = "footer-social-icon">
+                     <i class="fab fa-facebook-square"></i>
+                     <i class="fab fa-instagram"></i>
+                     <i class="fab fa-twitter-square"></i>
+                 </div>
+            </div>
+            <div class = "footer-about">
+                About-Me
+            <div class = "footer-about-detail">
+                73 m.4 Nathawee Songkhla 90160
+                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                 Amet quibusdam doloribus animi ipsa eum exercitationem magni velit commodi nulla explicabo.
+                  Exercitationem tempora fugit non pariatur totam odio aliquid unde quas!
+    
+            </div>
+             
+            </div>
+            
+        </footer>
+      </div>
+    
+</body>
+    <script>
+    function selectAll(el){
+    return   document.querySelectorAll("."+el)
+}
+function select(el){
+    return document.querySelector("."+el)
+}
+        
+        
+
+        let game_item = selectAll("game-item")
+        let new_item = selectAll("new-item")
+        let display_game_name = select("display-game-name")
+        let display_game = select("display-game")
+        let body = document.querySelector("body")
+        let header = selectAll("header-item")
+        let newCont = select("new")
+        let gameCout = select("game")
+        let game_table = select("game-table")
+        let display = select("display")
+        let box_pre = selectAll("boxprevent")
+
+        box_pre[0].classList.add("boxprevent-eff")
+        box_pre[1].classList.add("boxprevent-eff")
+
+
+        let submit = select("display-reciept-submit")
+        let submit_f = select("submit-eff")
+
+        
+        let add_cart = select('add-cart')
+
+        let cart_panel = select('cart-panel')
+        let cart = select("cart")
+      
+
+            
+            new_item.forEach(item=>{
+                item.addEventListener("click",function(e){
+
+        
+
+                box_pre[0].style.background = `url(${item.children[0].src})`
+                box_pre[0].style.backgroundSize = "contain"
+                box_pre[0].style.backgroundRepeat = "no-repeat"
+            })
+
+        })
+
+
+        setTimeout(()=>{
+            newCont.style.background = "url(/img/sea10.jpg)"
+            newCont.style.backgroundSize = "cover"
+            gameCout.style.background = "url('https://static.vecteezy.com/system/resources/previews/000/693/323/non_2x/abstract-gradient-pink-purple-stripes-on-purple-background-vector.jpg')"
+            gameCout.style.backgroundSize = "cover"
+    
+        },850)
+        setTimeout(()=>{
+            box_pre[0].classList.remove("boxprevent-eff")
+        },2000)
+
+
+
+
+        window.addEventListener("load",function(e){
+            body.style.overflowX = "hidden"
+
+            console.log(e.target.classList) 
+        })
+        window.addEventListener("click",function(e){
+            console.log(e.target.parentElement)
+            if(e.target.className === 'cart-text cart-text-remove' ){
+                e.target.parentElement.classList.add('cart-item-eff')
+                    setTimeout(()=>{
+                        cart_panel.removeChild(e.target.parentElement)
+                        
+                    },600)
+            
+            }
+          
+        
+        })
+
+
+        cart.addEventListener("click",function(){
+            cart_panel.classList.toggle("cart-panel-eff")
+      
+        })
+    
+
+        game_item.forEach(item =>{
+            item.addEventListener("click",function(){
+                console.log(item.childNodes)
+                display_game_name.innerText = item.childNodes[3].childNodes[1].innerText
+                display_game.childNodes[1].src = item.childNodes[1].src
+                body.style.overflow = "hidden"
+
+                display.classList.add("display-eff")
+
+            })
+        })
+   
+
+
+      
+
+        game_item.forEach(item =>{
+            item.addEventListener("click",function(){
+                let selectedGame = item
+
+          
+    
+       submit.addEventListener("click",function(e){
+            submit_f.classList.add("finish-eff")
+            setTimeout(()=>{
+             submit_f.children[0].classList.add("text-eff")
+             submit_f.children[1].classList.add("text-eff")
+
+             setTimeout(()=>{
+             submit_f.children[0].classList.remove("text-eff")
+             submit_f.children[1].classList.remove("text-eff")
+             setTimeout(()=>{
+           
+            submit_f.children[0].classList.add("text-eff")
+             submit_f.children[1].classList.add("text-eff")   
+
+             submit_f.children[0].innerHTML = `<i class="fas fa-check"></i>`
+             submit_f.children[1].innerHTML  = "purchase successful"
+
+             setTimeout(()=>{
+            submit_f.children[0].classList.remove("text-eff")
+            submit_f.children[1].classList.remove("text-eff")
+         
+            setTimeout(()=>{
+                submit_f.children[0].innerHTML = `<i class="fas fa-circle-notch fa-spin"></i>`
+                submit_f.children[1].innerHTML  = "on process..."
+                display.classList.remove("display-eff")
+                body.style.overflowY = "scroll"
+                game_table.removeChild(selectedGame)
+                setTimeout(()=>{
+             submit_f.classList.remove("finish-eff")
+            },500)
+            },1000)
+            },1500)
+            },1000)
+            },3000)
+            },1000)
+            
+        })
+        })
+    })
+
+     add_cart.addEventListener("click",function(e){
+
+        let cart_item = document.createElement("div")
+                let cart_img = document.createElement("img")
+                let cart_text = document.createElement("div")
+                let cart_text2 = document.createElement("div")
+                let cart_remover = document.createElement("div")
+
+                cart_item.classList.add('cart-item')
+                cart_img.classList.add('cart-img')
+                cart_text.classList.add('cart-text')
+                cart_text2.classList.add('cart-text')
+                cart_remover.classList.add('cart-text')
+                cart_remover.classList.add('cart-text-remove')
+
+                cart_text.innerText = select('display-game-name').innerHTML
+                cart_text2.innerText = select('reciept').children[1].innerHTML
+                cart_img.src = display_game.childNodes[1].src
+                cart_remover.innerHTML = "X"
+
+                cart_item.appendChild(cart_img)
+                cart_item.appendChild(cart_text)
+                cart_item.appendChild(cart_text2)
+                cart_item.appendChild(cart_remover)
+
+                cart_panel.append(cart_item)
+
+                })  
+
+     
+        new_item.forEach(item =>{
+            item.addEventListener("click",function(){
+                let url =  item.dataset.url + "&controls=0&autoplay=1&loop=1&mute=0&showinfo=0" 
+            
+                box_pre[0].innerText = item.childNodes[3].childNodes[1].innerText
+
+                document.querySelector("iframe").src = url
+
+                 box_pre[0].classList.add("boxprevent-eff")
+                 setTimeout(()=>{
+                 box_pre[0].classList.remove("boxprevent-eff")
+                 },2000)
+
+
+            })
+        })
+
+        
+        display.addEventListener("click",function(e){
+
+            if(e.target.className === "display display-eff"){
+                display.classList.remove("display-eff")
+                body.style.overflowY = "scroll"
+
+            }
+
+        })
+
+    </script>
+   
+</html>

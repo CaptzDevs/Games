@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="stylesheet" href="Gamestyle.css">
+
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+        }
+        body{
+      background-color: rgb(43, 43, 43);
+     /*  background-color: rgb(255, 255, 255); */
+      overflow: auto;
+    }
+    .main{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 10px 20px 90px 20px;
+       background-color: rgb(43, 43, 43);
+    
+    }
+    .news{
+        width: 100%;
+        height: 75vh;
+        background-color: rgb(85, 85, 85);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        
+    }
+    .news-left{
+        width: 70%;
+        height: 100%;
+        background-color: rgb(29, 29, 29);
+        position: relative;
+    }
+    .news-left-box{
+        width: 100%;
+        height: 10vh;
+        background-color: rgba(29, 29, 29, 0.37);
+        position: absolute;
+        bottom: 0;
+        backdrop-filter: blur(10px);
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+
+    }
+    .news-box-header{
+        width: auto;
+        height: 70%;
+        display: flex;
+        align-items:center;
+        justify-content: flex-start;
+        padding-left: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        border-left: 1px solid white;
+        text-transform: uppercase;
+        margin-top: 10px;
+
+    }
+    .news-box-detail{
+        width :100%;
+        height: auto;
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 20px;
+        font-size: 0.8rem;
+        padding-bottom: 20px;
+    }
+    .news-right{
+        width: 40%;
+        height: 100%;
+        background-color: rgb(46, 46, 46);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding:  0px 5px 0px 5px;
+    }
+    .news-right-item{
+        width: 100%;
+        height: 48%;
+        background-color: rgb(46, 46, 46);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-top: 5px;
+        margin-bottom: 10px;
+
+    }
+
+    img{
+        width: 100%;
+        height: 100%;
+    }
+    .line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        z-index: 2;
+        
+    }
+    .news-today{
+        width: 100%;
+        height: 65vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        margin-top: 20px;
+    }
+
+    .news-today-left{
+        width: 80%;
+        height: 100%;
+        background-color: rgb(88, 88, 88);
+        border-radius: 10px;
+        position: relative;
+    }
+    .news-today-right{
+        width: 40%;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: white;
+    }
+
+    div > i {
+        margin-left: 10px;
+    }  
+     footer{
+        width: 100%;
+        height: 20vh;
+        background: rgba(109, 109, 109, 0);
+        bottom: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        color: rgb(255, 255, 255);
+        position: absolute;
+        background: rgba(44, 44, 44, 0.8);
+
+
+    }
+    
+.footer-social{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.3rem;
+  border-right: 1px solid white;
+
+
+}
+.footer-social-icon{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  font-size: 1.2rem;
+
+}
+.footer-about{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-size: 1.2rem;
+
+
+
+}
+.footer-about-detail{
+  width: 100%;
+  height:100%;
+  font-size: 0.8rem;
+
+}
+</style>
+<body>
+    <header class="header">
+        <div class="loader"></div>
+        <div class="header-logo"><span class="head-name-float">Stream <i class="fas fa-gamepad"></i></span></div>
+        <a href="GameIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="GameLibrary.html" class="header-item profile-btn">
+            <i class="fas fa-th-large"></i> Library
+            <div class="detail">Library</div>
+        </a>
+        <a href="GameShop.html" class="header-item">
+            <i class="fas fa-tag"></i> Shop
+            <div class="detail">Shop</div>
+        </a>
+        <a href="GameNews.html" class="header-item">
+            <i class="far fa-newspaper"></i> News
+            <div class="detail">News</div>
+        </a>
+
+        <a href="Login.html" class="login-item"> Login <i class="fas fa-sign-in-alt"></i></a>
+        <div style="right: 100px;" class="login-item cart"> <i  class="fas fa-shopping-cart"></i></div>
+        
+
+
+      </header>
+    <div class="main">
+        <div class="news">
+            <div class="line-right"></div>
+            <div class="line-right" style="width: auto; background: none; padding-left: 10px; padding-top: 10px; font-size: 1.2rem;">News </div>
+
+         <div class="news-left">
+                <img src="https://images6.alphacoders.com/107/thumb-1920-1072679.jpg" alt="">
+                <div class="news-left-box">
+                    <div class="news-box-header"> Valorant  </div>
+               
+                   <div class="news-box-detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatum itaque suscipit hic beatae illo cupiditate atque odio iure harum impedit exercitationem repellendus, neque doloribus maxime molestias dolores eum cumque!
+                   </div>
+                </div>
+             </div>
+             <div class="news-right">
+             <div class="news-right-item">
+                <img src="https://pbs.twimg.com/media/E5yMmQRWEAYNvCY.jpg" alt="">
+             </div>
+             <div class="news-right-item">
+                <img src="https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt57314d2d9e8e9dce/60b6c918cf9889265dab764e/VALORANT_YR1_Voting_16_9_opt.jpg?auto=webp&disable=upscale&height=504" alt="">
+             </div> 
+
+            </div>
+
+
+
+         </div>
+     <div class="news-today">
+        <div class="news-today-left">
+            <img src="https://s.isanook.com/ga/0/ud/198/990849/assassin-creed_-01.jpg" alt="">
+                <div class="news-left-box">
+                    <div class="news-box-header"> assassin's creed origins  </div>
+               
+                   <div class="news-box-detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatum itaque suscipit hic beatae illo cupiditate atque odio iure harum impedit exercitationem repellendus, neque doloribus maxime molestias dolores eum cumque!
+                   </div>
+                </div>
+        </div>
+        <div class="news-today-right">Top News <i class="fas fa-fire"></i></div>
+
+        
+    </div>
+    <div class="news-today" style="flex-direction: row; margin-bottom: 20vh;">
+        <div class="news-today-left">
+            <img src="https://www.gg2.co/wp-content/uploads/2019/10/20181119062644115.jpg" alt="">
+                <div class="news-left-box">
+                    <div class="news-box-header"> red dead redemption 2  </div>
+               
+                   <div class="news-box-detail">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatum itaque suscipit hic beatae illo cupiditate atque odio iure harum impedit exercitationem repellendus, neque doloribus maxime molestias dolores eum cumque!
+                   </div>
+                </div>
+        </div>
+        <div class="news-today-right">Viral News <i class="fas fa-rss"></i></div>
+
+        
+    </div>
+
+    <footer class="footer">
+        <div class = "footer-social">
+            Follow Me
+            <div class = "footer-social-icon">
+                 <i class="fab fa-facebook-square"></i>
+                 <i class="fab fa-instagram"></i>
+                 <i class="fab fa-twitter-square"></i>
+             </div>
+        </div>
+        <div class = "footer-about">
+            About-Me
+        <div class = "footer-about-detail">
+            73 m.4 Nathawee Songkhla 90160
+             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Amet quibusdam doloribus animi ipsa eum exercitationem magni velit commodi nulla explicabo.
+              Exercitationem tempora fugit non pariatur totam odio aliquid unde quas!
+
+        </div>
+         
+        </div>
+        
+    </footer>
+  
+    </div>
+    
+</body>
+</html>

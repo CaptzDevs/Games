@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="Gamestyle.css">
+    <script src="https://kit.fontawesome.com/0244365092.js" crossorigin="anonymous"></script>
+</head>
+    <style>
+        
+          *{
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-sizing: border-box;
+        transition: 0.5s;
+
+        }
+        body{
+      background-color: rgb(43, 43, 43);
+     /*  background-color: rgb(255, 255, 255); */
+      overflow: hidden;
+    }
+    .main{
+        width: 100%;
+        height: 95vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding: 10px 20px 0px 20px;
+       background-color: rgb(43, 43, 43);
+    
+    }
+    .line-right{
+        width: 1px;
+        height: 7vh;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: white;
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+        z-index: 2;
+        
+    }
+    
+    @keyframes starter {
+        from{
+            transform: scale(0,0);
+        }
+        to{
+            transform: scale(1,1);
+        }
+    }
+    .library{
+        width: 100%;
+        height: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 20px;    
+        animation: starter 1s 0s forwards;
+        
+    }
+    
+    .library-games{
+        width: 70%;
+        height: 100%;
+/*         background-color: rgb(56, 56, 56); */
+        border-radius: 20px;
+        margin-right: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        overflow-y: hidden;
+
+
+    }
+   
+    .game-table{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 10px 10px 10px;
+        flex-wrap: wrap;
+        
+    }
+    
+    .game-item{
+        width: 15vw;
+        height: 35vh;
+        margin: 10px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        cursor: pointer;
+        overflow: visible;
+        margin-bottom: 40px;
+        padding: 10px;
+        transform: translate(0%,250%);
+
+            
+    }
+    .game-item img{
+        width: 100%;
+        height: 100%;
+        object-position:top left;
+        border-radius: 20px;
+    }
+    .game-box{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        color: white;
+        padding: 10px;
+    }
+    .game-name{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        color: white;
+        text-transform: capitalize;
+        font-size: 0.7rem;  
+
+    }
+    .game-price {
+        font-size: 0.7rem;   
+        padding: 5px;
+
+    }
+    .game-price i{
+        font-size: 0.6.5rem;   
+    }
+
+
+    .library-display{
+        width: 0%;
+        height: 100%;
+      /*   background-color: rgb(53, 53, 53); */
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding: 10px; */
+      /*   background: url('https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png');
+        background-size: cover; */
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+        transition: 1s;
+        
+    }
+
+    .library-display-border{
+        width: 95%;
+        height: 95%;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        z-index: 1;
+
+    }
+    
+    .library-display-box{
+        width: 100%;
+        height: 25%;
+        background-color: rgba(53, 53, 53, 0.7);
+        position:absolute;
+        bottom: 0;
+        left: 0;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 40px;
+        z-index: 1;
+
+    }
+    .library-display-play{
+        width: auto;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content:  center;
+        font-size: 1rem;
+        color: rgb(223, 223, 223);
+        cursor: pointer;
+        background: linear-gradient(45deg,
+        rgb(17, 165, 153)30%,rgb(23, 111, 194) );
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 5px;
+
+    }
+    .library-display-detail{
+        width: 50%;
+        height: 20%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 0.8rem;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        color: white;
+
+    }
+    .library-display-achiment{
+        width: 100%;
+        height: 3vh;
+        position:absolute;
+        bottom: 20px;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: .8rem;
+        z-index: 1;
+
+
+
+    }
+    .library-achiment-bar{
+        width: 50%;
+        height: 100%;
+        border: 1px solid white;
+        margin-left: 10px;
+        border-radius: 5px;
+    }
+    .library-display-img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+        position: absolute;
+        transform-origin: left;
+        filter: opacity(0%);
+
+        transition: 2s;
+
+
+    }
+
+    @keyframes itemLoader {
+        from{
+            transform: translate(0%,200%);
+            filter: opacity(0%);
+
+        }
+        to{
+            transform: translate(0%,0%);
+            filter: opacity(100%);
+
+        }
+        
+    }
+
+    .game-item-eff{
+        animation: itemLoader 1.5s 0s forwards;
+    }
+    .display-img-eff{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: opacity(100%);
+        transition: 2s;
+
+    }
+
+    .line{
+        width: 120%;
+        height: 5vh;
+        background-color: rgba(255, 255, 255, 0.7);
+        position: absolute;
+        right: -50px;
+        bottom: 0;
+        animation: reflex 5s 3s infinite  both;
+        filter: blur(20px);
+         transform:skewY(-40deg) translate(80px,100px); 
+    }
+  
+    @keyframes reflex {
+        from {
+        transform: skewY(-40deg) translate(150px,450px);
+
+        }
+        to{
+        transform: skewY(-40deg) translate(-200px,-800px);
+        }
+    }
+    .display {
+    width: 0vw;
+    height: 0vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(83, 83, 83, 0.486);
+    background: linear-gradient(45deg,rgba(154, 8, 238, 0.5),rgba(30, 104, 243, 0.5) );
+
+    z-index: 11;
+    backdrop-filter: blur(30px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.display-eff{
+    width: 100vw;
+    height: 100vh;
+    }
+    
+    .load{
+        width: 50%;
+        height: 5vh;
+        background: rgba(97, 97, 97, 0.404);  
+    overflow: hidden;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        backdrop-filter: blur(30px);
+        border-radius: 30px;
+        position: relative;
+    }
+    .loadbar{
+        width: 0%;
+        height: 100%;
+        background: linear-gradient(45deg,rgb(11, 201, 248),rgb(245, 11, 206) );
+        left: 0;
+        position: absolute;
+        color: white;
+
+    }
+    .load-eff{
+        animation: color 3s 1s infinite, loader 7s 1s forwards;
+    }
+    
+    @keyframes loader {
+        0%{
+        width: 0%;
+        }
+        100%{
+        width: 100%;
+        padding: 5px;
+        padding-left: 10px;
+
+        }
+
+    }
+
+  /*   @keyframes color {
+        0%{
+        filter: hue-rotate(0deg); 
+        }
+        100%{
+        filter: hue-rotate(360deg); 
+            
+        }
+        
+    } */
+
+    iframe{
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+    }
+
+    </style>
+<body>
+    
+    <header class="header">
+        <div class="header-logo"><span class="head-name-float">Stream <i class="fas fa-gamepad"></i></span></div>
+        <a href="GameIndex.html" class="header-item">
+            <i class="fas fa-home"></i> Home
+            <div class="detail">Home</div>
+        </a>
+        <a href="GameLibrary.html" class="header-item profile-btn">
+            <i class="fas fa-th-large"></i> Library
+            <div class="detail">Library</div>
+        </a>
+        <a href="GameShop.html" class="header-item">
+            <i class="fas fa-tag"></i> Shop
+            <div class="detail">Shop</div>
+        </a>
+        <a href="GameNews.html" class="header-item">
+            <i class="far fa-newspaper"></i> News
+            <div class="detail">News</div>
+        </a>
+
+        <a href="Login.html" class="login-item"> Login <i class="fas fa-sign-in-alt"></i></a>
+        <div style="right: 100px;" class="login-item cart"> <i  class="fas fa-shopping-cart"></i></div>
+
+      </header>
+      <div class="display">
+          <div class="load">
+              <div class="load-name" style="z-index: 5; text-transform: uppercase; font-size: 1.2rem; color: #fff;"></div>
+              <div class="loadbar"> </div>
+          </div>
+          <iframe src=""
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+      </div>
+      
+      <div class="main">
+          <div class="library">
+              <div class="library-games">
+                <div class="game-table">
+                    <div class="game-item">
+                        <img src="https://notebookspec.com/game/game_pic_big/333.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Ori and the blind Forrest  </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/th/thumb/d/d0/SIMS4.jpg/250px-SIMS4.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> The sims 4</div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://th-test-11.slatic.net/p/fa1453710d2245e0fa1f1743c4bf0097.jpg_720x720q80.jpg_.webp" alt="">
+                            <div class="game-box">
+                                <div class="game-name"> Stardew Valley </div>
+
+                            </div>
+                    </div>
+                    <div class="game-item" data-name="minecraft">
+                        <img src="https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> minecraft </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://s3.gaming-cdn.com/images/products/932/orig/terraria-cover.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Terraria </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/th/c/cc/Grand_Theft_Auto_V_Cover.png" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> The sims 4</div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://store.ubi.com/dw/image/v2/ABBS_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw7387f247/images/large/5ecd2c925cdf9a1528a8c1d1.jpg?sw=341&sh=450&sm=fit" alt="">
+                            <div class="game-box">
+                                <div class="game-name"> Stardew Valley </div>
+                            </div>
+                        
+                    </div>
+                    <div class="game-item">
+                        <img src="https://images.g2a.com/newlayout/323x433/1x1x0/e229a5565b45/5fd211ba46177c7d675c6372" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Ori and the blind Forrest  </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://www.satyrnet.it/wp-content/uploads/2021/03/Watch-Dogs-Legion-online.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Stardew Valley </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://www.digiseller.ru/preview/907830/p1_3090231_54be502c.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Stardew Valley </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://www.digiseller.ru/preview/907830/p1_3090231_54be502c.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Stardew Valley </div>
+                        </div>
+                    </div>
+                    <div class="game-item">
+                        <img src="https://www.digiseller.ru/preview/907830/p1_3090231_54be502c.jpg" alt="">
+                        <div class="game-box">
+                            <div class="game-name"> Stardew Valley </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="library-display">
+                <div class="library-display-border"></div>
+                <img class="library-display-img" src="https://image.api.playstation.com/vulcan/img/cfn/11307x4B5WLoVoIUtdewG4uJ_YuDRTwBxQy0qP8ylgazLLc01PBxbsFG1pGOWmqhZsxnNkrU3GXbdXIowBAstzlrhtQ4LCI4.png" alt="">
+                <div class="line"></div>
+                <div class="library-display-box">
+                    <div class="line-right"></div>
+                    <div class="line-right" style="width: auto; background: none; padding-left: 10px; padding-top: 10px; font-size: 1rem;">Minecraft </div>
+                    <div class="library-display-detail">
+                        <div>Play time : 10 hrs</div>
+                        <div>Last played : 12 hrs ago</div>
+                    </div>
+                    <div class="library-display-play">Lunch <i style="margin-left: 10px;" class="fas fa-power-off"></i> </div>
+                </div>
+                <div class="library-display-achiment">
+                    <div class="library-achiment">Achievment :</div>
+                    <div class="library-achiment-bar"></div>
+                </div>
+
+              </div>
+
+              
+          </div>
+          
+      </div>
+    
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/Scirpt.js">
+    function selectAll(el){
+    return   document.querySelectorAll("."+el)
+}
+function select(el){
+    return document.querySelector("."+el)
+}
+    </script>
+    <script>
+
+  
+
+   
+
+          let game_item = selectAll("game-item")
+          let library_display = select("library-display")
+          let library_games = select("library-games")
+          let display = select("display")
+
+          let library_display_img = document.querySelector(".library-display-img")
+          let body = document.querySelector("body")
+          let loadbar = select("loadbar")
+          let load_name = select("load-name")
+          let iframe = document.querySelector("iframe")
+
+        function minecraft() {
+                setTimeout(()=>{
+                iframe.src = 'https://www.youtube.com/embed/aicjFn4AW6g?controls=0&autoplay=1&loop=1&mute=1&showinfo=0&start=0'
+                 },3500)
+                setTimeout(()=>{
+                    iframe.style.display = "block"
+                },7500)
+        }
+        function thesims4() {
+                setTimeout(()=>{
+                iframe.src = 'https://www.youtube.com/embed/ANJpLJ3UkjY?controls=0&autoplay=1&loop=1&mute=1&showinfo=0&start=0'
+                 },3500)
+                setTimeout(()=>{
+                    iframe.style.display = "block"
+                },7500)
+        }
+        function stardew() {
+                setTimeout(()=>{
+                iframe.src = 'https://www.youtube.com/embed/1Q1MW_u8bOU?controls=0&autoplay=1&loop=1&showinfo=0&start=0'
+                 },3500)
+                setTimeout(()=>{
+                    iframe.style.display = "block"
+                },7500)
+        }
+
+            let playbtn = select('library-display-play')
+
+            playbtn.addEventListener('click',function(e){
+               display.classList.add("display-eff")
+                loadbar.classList.add("load-eff") 
+                body.requestFullscreen()
+                load_name.innerHTML = playbtn.parentElement.children[1].innerHTML
+               console.log(playbtn.parentElement.children[1].innerText == 'The sims 4')
+               console.log(playbtn.parentElement.children[1].innerText)
+
+
+                if(playbtn.parentElement.children[1].innerText == 'minecraft'){
+                    minecraft()
+                }
+                if(playbtn.parentElement.children[1].innerText == 'Stardew Valley'){
+                    stardew()
+                }
+                if(playbtn.parentElement.children[1].innerText == 'The sims 4'){
+                    thesims4()
+                }
+            })
+            
+
+
+        game_item.forEach(item =>{
+            item.addEventListener("click",function(e){
+                library_display.style.width = "30%"
+               setTimeout(()=>{
+                library_display_img.classList.add("display-img-eff")
+               },500)
+               library_display_img.classList.remove("display-img-eff")
+
+
+              library_display_img.src = e.target.src
+
+           library_display.children[3].children[1].innerHTML =  item.children[1].children[0].innerHTML
+          
+               
+            })
+        })
+ 
+          let i = 0
+            setTimeout(()=>{
+              let d1 = setInterval(()=>{
+                if(i <= game_item.length-1){
+                    game_item[i++].classList.add("game-item-eff")
+                }
+                if(i === 11){
+                    library_games.style.overflowY  = "scroll"
+                }
+                },200)
+            },500)
+
+
+          
+
+      
+
+          
+
+    </script>
+</html>
